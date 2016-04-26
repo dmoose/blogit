@@ -36,7 +36,7 @@ module Blogit
     ##
     # When using :disqus comments, what is the shortname of your forum?
     #  (default: nil)
-    config_accessor(:disqus_shortname, instance_writer: false)
+    config_accessor(:disqus_shortname)
 
     ##
     # Load a javascript-based share bar on each blog post?. (default: true)
@@ -143,14 +143,14 @@ module Blogit
     #
     # shortname - A String with the diquss username to use.
     #
-    def disqus_shortname=(shortname)
-      return if shortname.blank?
-      unless include_comments == :disqus
-        blogit_warn "You've set config.disqus_shortname in your blogit config file but " \
-         "config.include_comments is not set to :disqus"
-      end
-      @disqus_shortname = shortname
-    end
+#    def disqus_shortname=(shortname)
+#      return if shortname.blank?
+#      unless include_comments == :disqus
+#        blogit_warn "You've set config.disqus_shortname in your blogit config file but " \
+#         "config.include_comments is not set to :disqus"
+#      end
+#      @disqus_shortname = shortname
+#    end
 
     # The title to use in the index.rss template. (default: [My Application] Blog
     #   Posts")
